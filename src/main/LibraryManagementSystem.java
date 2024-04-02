@@ -21,6 +21,17 @@ public class LibraryManagementSystem {
         libraryBooks = new ArrayList<>();
     }
 
+    public State getCurrentState(){
+        return currentState;
+    }
+
+
+    public ArrayList<Book> getLibraryBooks(){return libraryBooks;}
+
+    public void addBook(Book book){
+        libraryBooks.add(book);
+    }
+
     // Method to loan a book to a patron
     public void loanBook(Book book, Patron patron) {
         if (currentState == State.IDLE) {
@@ -191,32 +202,32 @@ public class LibraryManagementSystem {
 
 
     // Main method for testing
-    public static void main(String[] args) {
-        LibraryManagementSystem librarySystem = new LibraryManagementSystem();
-
-        // Initialize the library
-        Book book1 = new Book("Book 1", 16, false);
-        Book book2 = new Book("Book 2", 32, true);
-        librarySystem.libraryBooks.add(book1);
-        librarySystem.libraryBooks.add(book2);
-
-        // Create patrons
-        Patron patron1 = new Patron("John", "Doe", "123 Main St", "555-1234", 1);
-        Patron patron2 = new Patron("Dave", "Scott", "134 Secondary St", "555-6789", 2);
-
-        // Loan a book to a patron
-        librarySystem.loanBook(book1, patron1);
-
-        // Return a book
-        librarySystem.returnBook(book1, patron1);
-
-        // Loan a book to a patron
-        librarySystem.loanBook(book2, patron2);
-
-        // Return a book
-        librarySystem.returnBook(book2, patron2);
-
-        // Perform administrative tasks
-        librarySystem.performAdministrativeTasks();
-    }
+//    public static void main(String[] args) {
+//        LibraryManagementSystem librarySystem = new LibraryManagementSystem();
+//
+//        // Initialize the library
+//        Book book1 = new Book("Book 1", 16, false);
+//        Book book2 = new Book("Book 2", 32, true);
+//        librarySystem.libraryBooks.add(book1);
+//        librarySystem.libraryBooks.add(book2);
+//
+//        // Create patrons
+//        Patron patron1 = new Patron("John", "Doe", "123 Main St", "555-1234", 1);
+//        Patron patron2 = new Patron("Dave", "Scott", "134 Secondary St", "555-6789", 2);
+//
+//        // Loan a book to a patron
+//        librarySystem.loanBook(book1, patron1);
+//
+//        // Return a book
+//        librarySystem.returnBook(book1, patron1);
+//
+//        // Loan a book to a patron
+//        librarySystem.loanBook(book2, patron2);
+//
+//        // Return a book
+//        librarySystem.returnBook(book2, patron2);
+//
+//        // Perform administrative tasks
+//        librarySystem.performAdministrativeTasks();
+//    }
 }
